@@ -21,8 +21,8 @@ model Barbershop {
   name     String
   address  String
   imageUrl String
-  Service  Service[] // uma barbearia vai ter varios serviços
-  Booking  Booking[] // uma barbearia vai ter varios agendamentos
+  services  Service[] // uma barbearia vai ter varios serviços
+  bookings  Booking[] // uma barbearia vai ter varios agendamentos
 }
 
 model Service {
@@ -32,8 +32,8 @@ model Service {
   description  String
   barbershopId String
   barbershop   Barbershop @relation(fields: [barbershopId], references: [id])
-  Booking      Booking[] // um serviço vai ter varios agendamentos
-  imageUrl     String?
+  bookings     Booking[] // um serviço vai ter varios agendamentos
+  imageUrl     String
 }
 
 model Booking {
